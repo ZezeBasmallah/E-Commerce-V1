@@ -1,0 +1,272 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    margin: 20px;
+    color: #666;
+    font-family: "Oswald", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+/* navigation */
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    border: 2px #999 solid;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.navigation ul {
+    display: flex;
+    list-style-type: none;
+    padding: 15px;
+}
+
+.navigation a {
+    text-decoration: none;
+    margin-left: 60px;
+    color: inherit;
+    transition: .5s;
+    padding: 5px;
+}
+
+.navigation a:hover {
+    border-bottom: #999 1px solid;
+}
+
+
+
+
+/* content */
+.main {
+    display: grid;
+    grid-template-areas: 'main1 main1 main4 main4'
+        'main1 main1 main4 main4'
+        'main2 main3 main4 main4';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px 10px;
+    margin-top: 20px;
+}
+
+.main1 {
+    grid-area: main1;
+    height: 500px;
+    /* background-image: url(assets/1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: #ddd;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: .5s ease-in-out;
+}
+
+.main1:hover {
+    background-image: url(assets/1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main1 h3 {
+    font-size: 2em;
+    font-weight: 200;
+    font-family: "Asset", serif;
+    color: black;
+    margin: 20px;
+    padding: 20px;
+    letter-spacing: 5px;
+}
+
+.main1 p {
+    margin: 20px;
+    padding: 10px;
+    font-size: .9em;
+    color: #333;
+}
+
+.main2 {
+    grid-area: main2;
+    height: 300px;
+    background-image: url(assets/4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
+    display: grid;
+    align-items: end;
+}
+
+.main2 h3 {
+    padding: 20px;
+    font-size: 1.5em;
+    font-family: "Asset", serif;
+    color: black;
+}
+
+.main3 {
+    grid-area: main3;
+    height: 300px;
+    background-image: url(assets/3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
+    display: grid;
+    align-items: end;
+}
+
+.main3 h3 {
+    padding: 20px;
+    font-size: 1.5em;
+    font-family: "Asset", serif;
+    color: black;
+}
+
+.main4 {
+    grid-area: main4;
+    height: 800px;
+    background-image: url(assets/2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
+    display: grid;
+    place-items: end;
+    place-content: end;
+    box-sizing: border-box;
+}
+
+.flex h2 {
+    padding: 20px;
+    color: #333;
+    background-color: white;
+    margin: 20px 10px;
+    border-radius: 20px;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.flex h2:last-child {
+    background-color: transparent;
+    border: 1px white solid;
+    color: white;
+}
+
+.main4,
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+/* responsive breakpoint */
+@media (max-width: 1300px) {
+    .main {
+        grid-template-areas: 'main1 main1 main4'
+            'main1 main1 main4'
+            'main2 main3 main4';
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .main2 h3 {
+        font-size: 1em;
+    }
+
+    .main3 h3 {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 800px) {
+    .navigation {
+        justify-content: none;
+        padding: none;
+    }
+
+    .navigation h1 {
+        font-size: 2em;
+    }
+
+    .navigation ul {
+        display: block;
+    }
+
+    .navigation a {
+        margin-left: none;
+    }
+
+    .navigation a:hover {
+        border-bottom: none;
+    }
+
+    .main {
+        grid-template-areas: 'main1 main1'
+            'main2 main3'
+            'main4 main4';
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main1 h3 {
+        font-size: 1.5em;
+    }
+
+    .main2 h3 {
+        font-size: 1em;
+    }
+
+    .main3 h3 {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 600px) {
+    .navigation {
+        justify-content: none;
+        padding: none;
+    }
+
+    .navigation h1 {
+        font-size: 1.5em;
+    }
+
+    .navigation ul {
+        display: block;
+    }
+
+    .navigation a {
+        margin-left: none;
+    }
+
+    .navigation a:hover {
+        border-bottom: none;
+    }
+
+    .main {
+        grid-template-areas: 'main1'
+            'main2'
+            'main3'
+            'main4';
+        grid-template-columns: 450px;
+    }
+
+    .main1 h3 {
+        font-size: 1.4em;
+    }
+
+    .main2 h3 {
+        font-size: 1.5em;
+    }
+
+    .main3 h3 {
+        font-size: 1.5em;
+    }
+
+}
